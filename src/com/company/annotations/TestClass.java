@@ -1,14 +1,16 @@
-package com.company;
+package com.company.annotations;
 
-public class TestClass extends ParrentClass implements TestInterface{
+public class TestClass extends ParrentClass implements ITestInterface {
 
     private int testFieldInt = 1;
     private String testFieldString = "test string";
     private final int TESTCONSTANT = 2;
+    public int publicInt;
 
     private TestClass(int testFieldInt, String testFieldString) {
         this.testFieldInt = testFieldInt;
         this.testFieldString = testFieldString;
+        System.out.println(testFieldString);
     }
 
     TestClass(String testFieldString) {
@@ -22,7 +24,9 @@ public class TestClass extends ParrentClass implements TestInterface{
     public TestClass() {
     }
 
-    private void testMethod(){ }
+    private void testMethod(String text) {
+        System.out.println(text);
+    }
 
     public int getTESTCONSTANT() {
         return TESTCONSTANT;
